@@ -1,6 +1,24 @@
-var http = require('http');
+const https = require('https');
+const fs = require('fs');
+const hsts = require('hsts')
+const express = require('express');
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hey there ! A portfolio is being built here.');
-}).listen(80); 
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
+const port = 443;
+
+app = express();
+
+app.use(hsts({
+  maxAge: 15552000  // 180 days in seconds
+}))
+
+app.get('/', function(req, res)
+{
+  res.send("Hello world !");
+});
+
+https.createServer(options, app)
+.listen(443);
