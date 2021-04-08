@@ -5,4 +5,8 @@ html
 		link(rel='stylesheet', href='/stylesheets/style.css')
 	body
 		include ./barmenu.jade
-		block content
+		.mainpage
+			block sidebar-left
+			block content
+			block sidebar-right
+		include footer.jade

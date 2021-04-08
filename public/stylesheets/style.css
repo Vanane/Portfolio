@@ -1,3 +1,12 @@
+*
+{
+    --main-color:black;
+    --second-color:gray;
+    --third-color:white;
+    box-sizing: border-box;
+}
+
+
 html, body
 {
     position: absolute;
@@ -18,8 +27,6 @@ a:hover
     color:black;
 }
 
-
-
 .barmenu
 {
     position:relative;
@@ -39,17 +46,68 @@ a:hover
     float:left;
     width:calc(100% / var(--nb-of-menus));
     text-align:center;
-    background-color: white;
     padding:1em;
     box-sizing: border-box;    
 }
 
-
 .barmenu a:hover
 {
-    background-color:#00000011 ;
-
+    background-color:#DDD;
 }
+
+.mainpage
+{
+    position:relative;
+    width:100%;
+    height:calc(100% - 3.25em * 2);
+}
+
+.sidebar-left
+{
+    position:relative;
+    float:left;
+    width:15%;
+    height:100%;
+    overflow:visible;
+    background-color: gray;
+}
+
+.content
+{
+    position:relative;
+    float:left;
+    width:70%;
+    height:100%;
+    overflow:auto;
+    padding:2em;
+}
+
+.sidebar-right
+{
+    position:relative;
+    float:right;
+    width:15%;
+    height:100%;
+    overflow:visible;
+    background-color: gray;
+}
+
+.footer
+{
+    position:relative;
+    bottom:0;
+    left:0;
+    width:100%;
+    min-height:3.25em;
+    padding:1em;
+    text-align:center;
+    border-top:solid 1px black;
+}
+
+
+
+
+
 
 
 
