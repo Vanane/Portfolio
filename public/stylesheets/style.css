@@ -1,12 +1,13 @@
 *
 {
-    --main-color:black;
-    --second-color:gray;
-    --third-color:white;
+    --main-color:white;
+    --second-color:rgb(255, 115, 0);
+    --third-color: rgb(64, 64, 64);
+    --text-color:black;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
+    font-weight: 900;
 }
-
 
 html, body
 {
@@ -20,12 +21,13 @@ html, body
 a
 {
     text-decoration:none;
-    color:black;
+    color:var(--text-color);
+    background-color: var(--main-color);
 }
 
 a:hover
 {
-    color:black;
+
 }
 
 .barmenu
@@ -35,7 +37,7 @@ a:hover
     top:0;
     left:0;
     width:100%;
-    border-bottom:solid 1px black;
+    border-bottom:solid 1px var(--text-color);
     box-sizing: border-box;
 }
 
@@ -48,12 +50,16 @@ a:hover
     width:calc(100% / var(--nb-of-menus));
     text-align:center;
     padding:1em;
-    box-sizing: border-box;    
+    box-sizing: border-box;
+    background-color:var(--main-color);
+    transition: background-color 0.25s;
 }
 
 .barmenu a:hover
 {
-    background-color:#DDD;
+    color:var(--main-color);
+    background-color: var(--second-color);
+    transition: background-color 0.25s;
 }
 
 .mainpage
@@ -67,17 +73,17 @@ a:hover
 {
     position:relative;
     float:left;
-    width:15%;
+    width:17.5%;
     height:100%;
     overflow:visible;
-    background-color: gray;
+    background-color: var(--third-color);
 }
 
 .content
 {
     position:relative;
     float:left;
-    width:70%;
+    width:65%;
     height:100%;
     overflow:auto;
     padding:2em;
@@ -87,10 +93,10 @@ a:hover
 {
     position:relative;
     float:right;
-    width:15%;
+    width:17.5%;
     height:100%;
     overflow:visible;
-    background-color: gray;
+    background-color: var(--third-color);
 }
 
 .footer
@@ -102,7 +108,7 @@ a:hover
     min-height:3.25em;
     padding:1em;
     text-align:center;
-    border-top:solid 1px black;
+    border-top:solid 1px var(--text-color);
 }
 
 
