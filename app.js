@@ -4,8 +4,21 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const https = require('https');
+const hsts = require('hsts');
+var express_enforces_ssl = require('express-enforces-ssl');
+
 
 var app = express();
+
+//HSTS
+app.use(hsts({
+  maxAge: 31536000,        // Must be at least 1 year to be approved
+  includeSubDomains: true, // Must be enabled to be approved
+  preload: true
+}))
+
+app.use(express_enforces_ssl());
+
 
 var indexRouter = require('./routes/index');
 
