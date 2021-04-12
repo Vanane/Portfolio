@@ -1,0 +1,15 @@
+extends layout
+
+block sidebar-left
+	div(class='sidebar-left')
+
+block content
+	div(class='content')
+		h1 Project #{project.name}
+		h2 Link to source : 
+			a(href=project.link target="_blank") #{project.link}
+		h2 About this project
+		p <tab/>#{project.description}
+
+block sidebar-right
+	div(class='sidebar-right')

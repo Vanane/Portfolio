@@ -7,7 +7,10 @@
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
     font-weight: 900;
+    text-align: justify;
 }
+
+tab { margin-left:40px; }
 
 html, body
 {
@@ -85,8 +88,8 @@ a:hover
     float:left;
     width:65%;
     height:100%;
-    overflow:auto;
-    padding:2em;
+    overflow-y:auto;
+    padding: 2em 4em 0 4em;
 }
 
 .sidebar-right
@@ -112,13 +115,37 @@ a:hover
 }
 
 
+.project-row
+{
+    display:block;
+    margin:0.5em 0;
+    padding:1em;
+    position:relative;
+    width:100%;
+    height:7.2em;
+    border:solid 2px;
 
+    transition:all ease-in 0.15s;
+    transform:scale(1);
+}
 
+.project-row:hover
+{
+    transition:all ease-out 0.15s;
+    transform:scale(1.01);
+}
 
+.project-row .name
+{
+    position:relative;
+    margin:0;
+    padding:0;
+    width:100%;
+    font-size:1.2em;
+}
 
-
-
-
-
-
-
+.project-row .description
+{
+    width:100%;
+    height:6em;
+}
