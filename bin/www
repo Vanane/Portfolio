@@ -9,6 +9,9 @@ var debug = require('debug')('portfolio:server');
 var https = require('https');
 const fs = require('fs');
 
+const db = require("../model/database");
+const projectRepo = require("../model/projectRepository");
+
 
 /**
  * Get port from environment and store in Express.
@@ -28,7 +31,6 @@ const options = {
 /**
  * Create HTTP server.
  */
-
 
 var server = https.createServer(options, app);
 
