@@ -21,10 +21,6 @@ app.use(hsts({
 
 app.use(express_enforces_ssl());
 
-
-var indexRouter = require('./routes/index');
-var projectsRouter = require('./routes/projects');
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -35,8 +31,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+var indexRouter = require('./routes/index');
+var cvRouter = require('./routes/cv');
+var projectsRouter = require('./routes/projects');
+var aboutRouter = require('./routes/about');
+
 app.use('/', indexRouter);
+app.use('/cv', cvRouter);
 app.use('/projects', projectsRouter);
+app.use('/about', aboutRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
