@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 Login page
+    if(err)
+        h2(class="error") #{err}
+    form(action="/login" method="POST")
+        | Email :
+        input(type="text" name="email")
+        | Password :
+        input(type="password" name="password")
+        input(type="submit" value="Login")
+        

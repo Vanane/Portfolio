@@ -11,7 +11,6 @@ async function initProjects()
     res.forEach(el =>
     {
         projects.push(newProject(el));
-        console.log(newProject(el));
     });
 }
 
