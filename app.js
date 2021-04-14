@@ -137,11 +137,13 @@ var indexRouter = require('./routes/index');
 var cvRouter = require('./routes/cv');
 var projectsRouter = require('./routes/projects');
 var aboutRouter = require('./routes/about');
+var adminRouter = require('./routes/admin');
 
 app.use('/', indexRouter);
 app.use('/cv', cvRouter);
 app.use('/projects', projectsRouter);
 app.use('/about', aboutRouter);
+app.use('/admin', adminRouter);
 
 
 // catch 404 and forward to error handler

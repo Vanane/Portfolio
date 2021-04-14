@@ -1,0 +1,5 @@
+if project['img']
+	img(class="image" src="#{project['img']}")
+a(class="project-row" href="/projects/#{project['id']}")
+	p(class="name") #{project['name']}
+	p(class="description") <tab/>#{project['description']} 

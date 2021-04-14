@@ -1,0 +1,13 @@
+extends layout 
+
+block content
+    h1 Add a new project
+    form(action="/admin/project/add", method="post")
+        span Name :
+        input(type="text" name="name" value=project ? project.name : "")
+        span Description :
+        textarea(name="description") #{project ? project.description : ""}
+        span Link :
+        input(type="text" name="link" value=project ? project.link : "")
+        input(type="hidden", name="id" value=project ? project.id : "")
+        input(type="submit", value="Send")

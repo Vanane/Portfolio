@@ -3,3 +3,6 @@ div(class='barmenu')
     a(href='/cv') CV
     a(href='/projects') Projects
     a(href='/about') About
+    if(user)
+        | Logged as #{user.email}
+        a(href='logout') Logout

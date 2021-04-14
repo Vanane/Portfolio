@@ -19,18 +19,20 @@ html, body
     height:100%;
     margin:0;
     padding:0;
+    background-color: #404040;
+    background-image: url("https://vanane.net/randimage");
 }
 
 a
 {
     text-decoration:none;
+    text-decoration:underline;
     color:var(--text-color);
-    background-color: var(--main-color);
 }
 
 a:hover
 {
-
+    color:var(--second-color);
 }
 
 .barmenu
@@ -42,6 +44,7 @@ a:hover
     width:100%;
     border-bottom:solid 1px var(--text-color);
     box-sizing: border-box;
+    background-color: white;
 }
 
 .barmenu a
@@ -72,35 +75,19 @@ a:hover
     height:calc(100% - 3.25em * 2);
 }
 
-.sidebar-left
-{
-    position:relative;
-    float:left;
-    width:17.5%;
-    height:100%;
-    overflow:visible;
-    background-color: var(--third-color);
-}
 
 .content
 {
     position:relative;
     float:left;
     width:65%;
+    left:17.5%;
     height:100%;
     overflow-y:auto;
     padding: 2em 4em 0 4em;
+    background-color: white;    
 }
 
-.sidebar-right
-{
-    position:relative;
-    float:right;
-    width:17.5%;
-    height:100%;
-    overflow:visible;
-    background-color: var(--third-color);
-}
 
 .footer
 {
@@ -112,6 +99,81 @@ a:hover
     padding:1em;
     text-align:center;
     border-top:solid 1px var(--text-color);
+    background-color: white;
+}
+
+
+form
+{
+    padding:0 10%;
+}
+
+form > span
+{
+    width:50%;
+    padding:0.5em 0;
+    float:left;
+    text-align: left;
+}
+
+form > span+input, form > span+textarea
+{
+    width:50%;
+    padding:0.5em 0;
+    margin:0.5em 0;
+    float:left;
+    background-color: #eee;
+    box-sizing: border-box;
+    border:none;
+    border-bottom:solid 1px black;
+    border-radius: 0px;
+}
+
+form input:focus, form textarea:focus
+{
+    border-color:var(--second-color);
+    transition: border-color 0.1s;
+}
+
+form *
+{
+    font-size:1em;
+    padding:0.5em 0;
+    margin:0.5em 0;
+    color:var(--text-color);
+}
+
+form textarea
+{
+    width:100%;
+    height:12em;
+}
+
+form span+textarea
+{
+    width:100%;
+    height:12em;
+}
+
+form input[type="submit"]
+{
+    text-align: center;
+    background-color: var(--main-color);    
+    width:100%;
+    margin:0.5em 0 0 0;
+    padding:1em;
+    border-radius: 0;
+    border:solid 1px;
+    border-color: var(--text-color);
+    transition: border-color 0.1s, color ease-in 0.1s;
+}
+
+form input:hover[type="submit"]
+{
+    color:var(--second-color);
+    border:solid 1px ;
+    border-color: var(--second-color);
+    transition: border-color 0.1s, color ease-in 0.1s;
 }
 
 
@@ -148,4 +210,39 @@ a:hover
 {
     width:100%;
     height:6em;
+}
+
+
+/** Style for admin panels **/
+
+.db-array
+{
+    position:relative;
+    table-layout: fixed;
+    width:100%;
+    border:solid 1px black;
+    margin:1em 0;
+}
+
+.db-array tr
+{
+    border-bottom:solid 1px black;
+    height:2em;
+}
+
+.db-array tr:nth-child(2n - 1)
+{
+    background-color:#eee;
+}
+
+.db-array th
+{
+    text-align: center;
+}
+
+.db-array td
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }

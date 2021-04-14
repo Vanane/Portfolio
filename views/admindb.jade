@@ -1,0 +1,43 @@
+extends layout 
+
+block content
+	a(href="project/add") Add a project
+	if projects
+		table(class="db-array")
+			tr
+				th(width="10%") Id
+				th(width="10%") Name
+				th(width="45%") Description
+				th(width="15%") Link
+				th(width="20%") Actions
+			each project in projects
+				tr
+					td=project.id
+					td=project.name
+					td=project.description
+					td 
+						a(href=project.link target="_blank") #{project.link}
+					td
+						a(href="project/modify/#{project.id}") Modify
+						|  | 
+						a(href="project/delete/#{project.id}") Delete
+	else 
+		h1 There's no project
+
+	//a(href="project/user") Add a user
+	if users
+		table(class="db-array")
+			tr
+				th(width="10%") Id
+				th(width="70%") Email
+				th(width="20%") Actions
+			each user in users
+				tr
+					td=user.id
+					td=user.email
+					td
+						a(href="project/modify/#{user.id}") Modify
+						|  | 
+						a(href="project/delete/#{user.id}") Delete
+	else 
+		h1 There's no user

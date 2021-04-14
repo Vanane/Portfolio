@@ -5,10 +5,13 @@ html
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		link(rel="preconnect" href="https://fonts.gstatic.com")
 		link(href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet")
+		<meta property="og:title" content="Le Vanane"/>
+		<meta property="og:type" content="portfolio"/>
+		<meta property="og:url" content="https://vanane.net"/>
+		<meta property="og:description" content="Vanane's portfolio"/>
 	body
 		include ./barmenu.jade
 		.mainpage
-			block sidebar-left
-			block content
-			block sidebar-right
+			div(class='content')
+				block content
 		include footer.jade

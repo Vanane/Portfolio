@@ -4,8 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	console.log("session id : " + req.sessionID)
-	res.render('index', { title:'Le Vanane'});
+	res.render('index', { user: req.user ? req.user : false });
 });
 
 
@@ -31,5 +30,18 @@ router.post('/login', (req, res, next) => {
 	})(req, res, next);
 })
 
+
+/* GET login page. */
+router.get('/logout', function(req, res) {
+	req.logout();
+	res.redirect('/');
+});
+
+
+/* GET a random picture, used for the background of the website. */
+router.get('/randimage', function(req, res) {
+	res.send(Math.random().toString());
+	// add a table in db and images in the list, and get a random image from db
+});
 
 module.exports = router;

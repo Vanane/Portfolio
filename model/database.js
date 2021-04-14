@@ -24,7 +24,7 @@ function connect()
     });
     client.connect();
 }
-
+    
 
 async function getProjects()
 {
@@ -34,6 +34,30 @@ async function getProjects()
     });
 
     return results.rows;
+}
+
+
+async function addProject(name, description, link)
+{
+    var inserted = await client.query({
+        text: "INSERT INTO Project(pName, pDescription, pLink) VALUES ($1, $2, $3) RETURNING *;",
+        values: [name, description, link],
+        rowMode: "array"
+    });
+
+    return inserted.rows[0];
+}
+
+
+async function modifyProject(project)
+{
+    var updated = await client.query({
+        text: "UPDATE Project SET pName = $1, pDescription = $2, pLink = $3 WHERE pId = $4 RETURNING *;",
+        values:[project.name, project.description, project.link, project.id],
+        rowMode: "array"
+    });
+
+    return updated.rows[0];
 }
 
 
@@ -79,7 +103,9 @@ module.exports =
     initDb,
     
     getProjects,
-
+    addProject,
+    modifyProject,
+    
     getUsers,
     checkUserPassword,
     addUser
