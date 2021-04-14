@@ -5,4 +5,11 @@ CREATE TABLE IF NOT EXISTS Project(
     pDescription TEXT
 );
 
+
+CREATE TABLE User (
+  id SERIAL PRIMARY KEY,
+  email TEXT NOT NULL UNIQUE,
+  password TEXT NOT NULL
+);
+
 --INSERT INTO Project(pName, pLink, pDescription) VALUES('Grossout', 'https://github.com/vanane/Grossout', 'Grossout is a small 2D game that has been inspired by Crossout. This is a top-down-view RPG made by myself, and also a practice exercice.');
