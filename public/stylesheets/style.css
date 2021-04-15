@@ -173,3 +173,71 @@ html, body
 	text-align: center;
 }
 
+
+@media(max-width:1023px)
+{
+	.barmenu .links
+	{
+		float:none;
+		width:100%;
+	}
+}
+
+
+@media(max-width:479px)
+{
+	.barmenu
+	{
+		background-color: var(--second-color);
+		height:auto;
+	}
+
+
+	.barmenu::before
+	{
+		display:none;		
+	}
+	
+
+	.barmenu .links
+	{
+		float:none;
+		width:100%;
+		height:auto;
+	}
+
+
+	.barmenu a
+	{
+		width:50%;
+	}
+
+	.mainpage, .content
+	{
+		padding:0;
+		left:0;
+		width:100%;
+		padding:0 0.5em;
+		height:auto;
+		overflow:visible;
+	}
+
+	.mainpage h1
+	{
+		text-align: center;
+	}
+
+
+	.project-row
+	{
+		width:100%;
+		padding: 0;
+	}
+
+
+	.footer
+	{
+		font-size:1rem;
+	}
+}
+
