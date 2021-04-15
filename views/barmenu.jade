@@ -1,8 +1,9 @@
 div(class='barmenu')
-    a(href='/') Home
-    a(href='/cv') CV
-    a(href='/projects') Projects
-    a(href='/about') About
-    if(user)
-        | Logged as #{user.email}
-        a(href='logout') Logout
+    div(class="links")
+        a(href='/about') About
+        a(href='/cv') CV
+        a(href='/projects') Projects
+        a(href='/') Home
+        if(user)
+            | Logged as #{user.email}
+            a(href='logout') Logout

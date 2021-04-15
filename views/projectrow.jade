@@ -1,5 +1,5 @@
-if project['img']
-	img(class="image" src="#{project['img']}")
 a(class="project-row" href="/projects/#{project['id']}")
-	p(class="name") #{project['name']}
-	p(class="description") <tab/>#{project['description']} 
+	if project['img']
+		img(class="image" src="#{project['img']}")
+	h2(class="name") #{project['name']}
+	p(class="description") #{project['description']} 

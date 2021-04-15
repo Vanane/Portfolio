@@ -1,8 +1,5 @@
 extends layout
 
-block sidebar-left
-	div(class='sidebar-left')
-
 block content
 	h1=title
 	if projects
@@ -10,6 +7,3 @@ block content
 			include ./projectrow.jade
 	else 
 		p There is no project registered right now.
-
-block sidebar-right
-	div(class='sidebar-right')
