@@ -12,4 +12,6 @@ CREATE TABLE IF NOT EXISTS WebUser (
   password TEXT NOT NULL
 );
 
+
+ALTER TABLE Project ADD COLUMN IF NOT EXISTS img TEXT;
 --INSERT INTO Project(pName, pLink, pDescription) VALUES('Grossout', 'https://github.com/vanane/Grossout', 'Grossout is a small 2D game that has been inspired by Crossout. This is a top-down-view RPG made by myself, and also a practice exercice.');

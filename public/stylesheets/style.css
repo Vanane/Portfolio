@@ -67,7 +67,7 @@ html, body
 
 .barmenu a
 {
-	--nb-of-links:5;
+	--nb-of-links:6;
 	position:relative;
 	float:right;
 
@@ -115,8 +115,8 @@ html, body
 .content
 {
 	position:relative;
-	width:65%;
-	left:17.5%;
+	width:calc(100% / 1.5); /* 67% */
+	left:calc(100% / 6); /* 16.67% */
 	height:100%;
 	overflow-y:auto;
 }
@@ -174,17 +174,29 @@ html, body
 }
 
 
-@media(max-width:1023px)
+.-m
+{
+	display:none;
+}
+
+
+@media only screen and (max-width:1024px)
 {
 	.barmenu .links
 	{
 		float:none;
 		width:100%;
 	}
+
+	.content
+	{
+		width:calc(100% / 1.25); /* 80% */
+		left:calc(100% / 10); /* 10% */
+	}
 }
 
 
-@media(max-width:479px)
+@media only screen and (max-width:480px)
 {
 	.barmenu
 	{

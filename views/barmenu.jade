@@ -5,5 +5,8 @@ div(class='barmenu')
         a(href='/projects') Projects
         a(href='/') Home
         if(user)
-            | Logged as #{user.email}
             a(href='logout') Logout
+
+div(class='barmenu -m')
+
+script(src="javascripts/menu.js")
