@@ -1,0 +1,3 @@
+[submodule "extensions/Vanane-item-Gen"]
+	path = extensions/Vanane-item-Gen
+	url = https://github.com/Vanane/Vanane-Item-Gen
