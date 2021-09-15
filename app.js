@@ -1,6 +1,5 @@
 // https things
 var createError = require('http-errors');
-const https = require('https');
 const hsts = require('hsts');
 var express_enforces_ssl = require('express-enforces-ssl');
 
@@ -36,8 +35,9 @@ const pool = new Pool({
 	connectionTimeoutMillis: 5000,
 });
 
-var app = express();
 
+var app = express();
+process.env.PORT = config.getParam("port");
 
 // hsts & ssl
 app.use(hsts({
@@ -164,6 +164,5 @@ app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 	res.render('error');
 });
-
 
 module.exports = app;

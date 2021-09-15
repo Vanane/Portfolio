@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "service postgresql start && node ./bin/www"
+    "start": "sudo service postgresql start && sudo node ./bin/www"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

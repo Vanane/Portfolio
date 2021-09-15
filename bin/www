@@ -18,7 +18,6 @@ var port = normalizePort(process.env.PORT || '443');
 app.set('port', port);
 
 
-
 /* Set certificates */
 const options = {
   key: fs.readFileSync('certs/key.pem'),
