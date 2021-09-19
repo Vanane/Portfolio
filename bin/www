@@ -6,7 +6,7 @@
 
 var app = require('../app');
 var debug = require('debug')('portfolio:server');
-var https = require('https');
+var http = require('http');
 const fs = require('fs');
 
 
@@ -18,17 +18,12 @@ var port = normalizePort(process.env.PORT || '443');
 app.set('port', port);
 
 
-/* Set certificates */
-const options = {
-  key: fs.readFileSync('certs/key.pem'),
-  cert: fs.readFileSync('certs/cert.pem')
-};
 
 /**
  * Create HTTP server.
  */
 
-var server = https.createServer(options, app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.

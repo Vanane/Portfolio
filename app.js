@@ -1,7 +1,5 @@
 // https things
 var createError = require('http-errors');
-const hsts = require('hsts');
-var express_enforces_ssl = require('express-enforces-ssl');
 
 // auth things
 var cookieParser = require('cookie-parser');
@@ -38,15 +36,6 @@ const pool = new Pool({
 
 var app = express();
 process.env.PORT = config.getParam("port");
-
-// hsts & ssl
-app.use(hsts({
-	maxAge: 31536000,				// Must be at least 1 year to be approved
-	includeSubDomains: true, // Must be enabled to be approved
-	preload: true
-}))
-
-app.use(express_enforces_ssl());
 
 
 // configure passport, for retrieving sessions from db
